@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,14 +18,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -39,8 +40,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -79,7 +79,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -90,11 +91,16 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./planning.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -102,144 +108,163 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Propensity Score Analysis for Medical Research: A Primer and Tutorial</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./planning.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></a>
+  <a href="./planning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Running the Analysis</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Running the Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./running.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Steps</span></a>
+  <a href="./running.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Steps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conceptual.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></a>
+  <a href="./conceptual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conceptual aspects of the analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conditioning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></a>
+  <a href="./conditioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conditioning: matching and weighting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assessing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing quality</span></a>
+  <a href="./assessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assessing quality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./respecification.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></a>
+  <a href="./respecification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Respecification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></a>
+  <a href="./estimating.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating the treatment effect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sensitivity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></a>
+  <a href="./sensitivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./advanced.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Advanced topics</span></a>
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Advanced topics</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reporting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></a>
+  <a href="./reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting the Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Example</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Example</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Example Data</span></a>
+  <a href="./example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Example Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ex-match.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></a>
+  <a href="./ex-match.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matching</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ex-weight.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></a>
+  <a href="./ex-weight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Weighting</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conclusion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></a>
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types-of-questions-that-can-be-answered" id="toc-types-of-questions-that-can-be-answered" class="nav-link active" data-scroll-target="#types-of-questions-that-can-be-answered"><span class="toc-section-number">1.1</span>  Types of questions that can be answered</a></li>
-  <li><a href="#choosing-an-estimand" id="toc-choosing-an-estimand" class="nav-link" data-scroll-target="#choosing-an-estimand"><span class="toc-section-number">1.2</span>  Choosing an estimand</a>
+  <li><a href="#types-of-questions-that-can-be-answered" id="toc-types-of-questions-that-can-be-answered" class="nav-link active" data-scroll-target="#types-of-questions-that-can-be-answered"><span class="header-section-number">1.1</span> Types of questions that can be answered</a></li>
+  <li><a href="#choosing-an-estimand" id="toc-choosing-an-estimand" class="nav-link" data-scroll-target="#choosing-an-estimand"><span class="header-section-number">1.2</span> Choosing an estimand</a>
   <ul class="collapse">
-  <li><a href="#marginal-and-conditional-effects" id="toc-marginal-and-conditional-effects" class="nav-link" data-scroll-target="#marginal-and-conditional-effects"><span class="toc-section-number">1.2.1</span>  Marginal and conditional effects</a></li>
-  <li><a href="#the-target-population" id="toc-the-target-population" class="nav-link" data-scroll-target="#the-target-population"><span class="toc-section-number">1.2.2</span>  The target population</a></li>
+  <li><a href="#marginal-and-conditional-effects" id="toc-marginal-and-conditional-effects" class="nav-link" data-scroll-target="#marginal-and-conditional-effects"><span class="header-section-number">1.2.1</span> Marginal and conditional effects</a></li>
+  <li><a href="#the-target-population" id="toc-the-target-population" class="nav-link" data-scroll-target="#the-target-population"><span class="header-section-number">1.2.2</span> The target population</a></li>
   </ul></li>
-  <li><a href="#meeting-assumptions" id="toc-meeting-assumptions" class="nav-link" data-scroll-target="#meeting-assumptions"><span class="toc-section-number">1.3</span>  Meeting assumptions</a>
+  <li><a href="#meeting-assumptions" id="toc-meeting-assumptions" class="nav-link" data-scroll-target="#meeting-assumptions"><span class="header-section-number">1.3</span> Meeting assumptions</a>
   <ul class="collapse">
-  <li><a href="#the-backdoor-criterion" id="toc-the-backdoor-criterion" class="nav-link" data-scroll-target="#the-backdoor-criterion"><span class="toc-section-number">1.3.1</span>  The backdoor criterion</a></li>
-  <li><a href="#positivity" id="toc-positivity" class="nav-link" data-scroll-target="#positivity"><span class="toc-section-number">1.3.2</span>  Positivity</a></li>
-  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="toc-section-number">1.3.3</span>  Consistency</a></li>
+  <li><a href="#the-backdoor-criterion" id="toc-the-backdoor-criterion" class="nav-link" data-scroll-target="#the-backdoor-criterion"><span class="header-section-number">1.3.1</span> The backdoor criterion</a></li>
+  <li><a href="#positivity" id="toc-positivity" class="nav-link" data-scroll-target="#positivity"><span class="header-section-number">1.3.2</span> Positivity</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">1.3.3</span> Consistency</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">1.4</span>  Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.4</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -248,7 +273,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-planning" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></h1>
+<h1 class="title"><span id="sec-planning" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planning the Analysis</span></span></h1>
 </div>
 
 
@@ -319,59 +344,59 @@ div.csl-indent {
 <p>Propensity score analysis requires certain assumptions for the effect estimate to be validly interpreted as causal, which include satisfaction of the backdoor criterion, positivity, and consistency <span class="citation" data-cites="hernanEstimatingCausalEffects2006">(<a href="references.html#ref-hernanEstimatingCausalEffects2006" role="doc-biblioref">Hernán and Robins 2006</a>)</span>. These assumptions must be assessed by appealing to substantive knowledge about the causal system under study and the variables that are available to the researcher. Satisfaction of the backdoor criterion requires that there is no unmeasured confounding and no variables caused by the treatment or outcome are adjusted for. Positivity requires that all units are eligible to receive either treatment. Consistency requires that there are no unmeasured versions of treatment, including versions defined by the treatment status of other patients in the study. These assumptions and the choices required to satisfy and assess them are described in <span class="citation" data-cites="vanderweelePrinciplesConfounderSelection2019">VanderWeele (<a href="references.html#ref-vanderweelePrinciplesConfounderSelection2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="westreichInvitedCommentaryPositivity2010">Westreich and Cole (<a href="references.html#ref-westreichInvitedCommentaryPositivity2010" role="doc-biblioref">2010</a>)</span>, and <span class="citation" data-cites="hernanDoesObesityShorten2008">Hernán and Taubman (<a href="references.html#ref-hernanDoesObesityShorten2008" role="doc-biblioref">2008</a>)</span>, which are highly recommended.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-brookhartConfoundingControlHealthcare2010a" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-brookhartConfoundingControlHealthcare2010a" class="csl-entry" role="listitem">
 Brookhart, M. Alan, Til Stürmer, Robert J. Glynn, Jeremy Rassen, and Sebastian Schneeweiss. 2010. <span>“Confounding Control in Healthcare Database Research: Challenges and Potential Approaches.”</span> <em>Medical Care</em> 48 (6): S114–20. <a href="https://doi.org/10.1097/MLR.0b013e3181dbebe3">https://doi.org/10.1097/MLR.0b013e3181dbebe3</a>.
 </div>
-<div id="ref-coleConsistencyStatementCausal2009a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-coleConsistencyStatementCausal2009a" class="csl-entry" role="listitem">
 Cole, Stephen R., and Constantine E. Frangakis. 2009. <span>“The Consistency Statement in Causal Inference: A Definition or an Assumption?”</span> <em>Epidemiology</em> 20 (1): 3–5. <a href="https://doi.org/10.1097/EDE.0b013e31818ef366">https://doi.org/10.1097/EDE.0b013e31818ef366</a>.
 </div>
-<div id="ref-fogartyDiscreteOptimizationInterpretable2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fogartyDiscreteOptimizationInterpretable2016" class="csl-entry" role="listitem">
 Fogarty, Colin B., Mark E. Mikkelsen, David F. Gaieski, and Dylan S. Small. 2016. <span>“Discrete Optimization for Interpretable Study Populations and Randomization Inference in an Observational Study of Severe Sepsis Mortality.”</span> <em>Journal of the American Statistical Association</em> 111 (514): 447–58. <a href="https://doi.org/10.1080/01621459.2015.1112802">https://doi.org/10.1080/01621459.2015.1112802</a>.
 </div>
-<div id="ref-greenlandCausalDiagramsEpidemiologic1999" class="csl-entry" role="doc-biblioentry">
+<div id="ref-greenlandCausalDiagramsEpidemiologic1999" class="csl-entry" role="listitem">
 Greenland, Sander, Judea Pearl, and James M. Robins. 1999. <span>“Causal Diagrams for Epidemiologic Research.”</span> <em>Epidemiology</em> 10 (1): 37–48. <a href="https://www.jstor.org/stable/3702180">https://www.jstor.org/stable/3702180</a>.
 </div>
-<div id="ref-greiferChoosingEstimandWhen2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-greiferChoosingEstimandWhen2021" class="csl-entry" role="listitem">
 Greifer, Noah, and Elizabeth A. Stuart. 2021. <span>“Choosing the Estimand When Matching or Weighting in Observational Studies.”</span> <em>arXiv:2106.10577 [Stat]</em>, June. <a href="https://arxiv.org/abs/2106.10577">https://arxiv.org/abs/2106.10577</a>.
 </div>
-<div id="ref-hanDefiningEstimandsClinical2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hanDefiningEstimandsClinical2023" class="csl-entry" role="listitem">
 Han, Shasha, and Xiao-Hua Zhou. 2023. <span>“Defining Estimands in Clinical Trials: A Unified Procedure.”</span> <em>Statistics in Medicine</em>, March, sim.9702. <a href="https://doi.org/10.1002/sim.9702">https://doi.org/10.1002/sim.9702</a>.
 </div>
-<div id="ref-hernanEstimatingCausalEffects2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hernanEstimatingCausalEffects2006" class="csl-entry" role="listitem">
 Hernán, Miguel A, and James M. Robins. 2006. <span>“Estimating Causal Effects from Epidemiological Data.”</span> <em>Journal of Epidemiology and Community Health (1979-)</em> 60 (7): 578–86. <a href="http://www.jstor.org/stable/40795098">http://www.jstor.org/stable/40795098</a>.
 </div>
-<div id="ref-hernanDoesObesityShorten2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hernanDoesObesityShorten2008" class="csl-entry" role="listitem">
 Hernán, Miguel A, and S L Taubman. 2008. <span>“Does Obesity Shorten Life? The Importance of Well-Defined Interventions to Answer Causal Questions.”</span> <em>International Journal of Obesity</em> 32 (S3): S8–14. <a href="https://doi.org/10.1038/ijo.2008.82">https://doi.org/10.1038/ijo.2008.82</a>.
 </div>
-<div id="ref-huberCausalPitfallsDecomposition2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-huberCausalPitfallsDecomposition2015" class="csl-entry" role="listitem">
 Huber, Martin. 2015. <span>“Causal <span>Pitfalls</span> in the <span>Decomposition</span> of <span>Wage Gaps</span>.”</span> <em>Journal of Business &amp; Economic Statistics</em> 33 (2): 179–91. <a href="https://doi.org/10.1080/07350015.2014.937437">https://doi.org/10.1080/07350015.2014.937437</a>.
 </div>
-<div id="ref-imaiCausalInferenceGeneral2004" class="csl-entry" role="doc-biblioentry">
+<div id="ref-imaiCausalInferenceGeneral2004" class="csl-entry" role="listitem">
 Imai, Kosuke, and David A. Van Dyk. 2004. <span>“Causal Inference with General Treatment Regimes: Generalizing the Propensity Score.”</span> <em>Journal of the American Statistical Association</em> 99 (467): 854–66. <a href="https://www.jstor.org/stable/27590455">https://www.jstor.org/stable/27590455</a>.
 </div>
-<div id="ref-kahanEliminatingAmbiguousTreatment2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kahanEliminatingAmbiguousTreatment2023" class="csl-entry" role="listitem">
 Kahan, Brennan C, Suzie Cro, Fan Li, and Michael O Harhay. 2023. <span>“Eliminating Ambiguous Treatment Effects Using Estimands.”</span> <em>American Journal of Epidemiology</em>, February, kwad036. <a href="https://doi.org/10.1093/aje/kwad036">https://doi.org/10.1093/aje/kwad036</a>.
 </div>
-<div id="ref-kingDangersExtremeCounterfactuals2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kingDangersExtremeCounterfactuals2006" class="csl-entry" role="listitem">
 King, Gary, and Langche Zeng. 2006. <span>“The Dangers of Extreme Counterfactuals.”</span> <em>Political Analysis</em> 14 (2): 131–59. <a href="https://doi.org/10.1093/pan/mpj004">https://doi.org/10.1093/pan/mpj004</a>.
 </div>
-<div id="ref-matthayAlternativeCausalInference2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-matthayAlternativeCausalInference2020" class="csl-entry" role="listitem">
 Matthay, Ellicott C., Erin Hagan, Laura M. Gottlieb, May Lynn Tan, David Vlahov, Nancy E. Adler, and M. Maria Glymour. 2020. <span>“Alternative Causal Inference Methods in Population Health Research: Evaluating Tradeoffs and Triangulating Evidence.”</span> <em>SSM - Population Health</em> 10 (April): 100526. <a href="https://doi.org/10.1016/j.ssmph.2019.100526">https://doi.org/10.1016/j.ssmph.2019.100526</a>.
 </div>
-<div id="ref-rosenbaumInterferenceUnitsRandomized2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rosenbaumInterferenceUnitsRandomized2007" class="csl-entry" role="listitem">
 Rosenbaum, Paul R. 2007. <span>“Interference Between Units in Randomized Experiments.”</span> <em>Journal of the American Statistical Association</em> 102 (477): 191–200. <a href="https://doi.org/10.1198/016214506000001112">https://doi.org/10.1198/016214506000001112</a>.
 </div>
-<div id="ref-rosenbaumCentralRolePropensity1983" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rosenbaumCentralRolePropensity1983" class="csl-entry" role="listitem">
 Rosenbaum, Paul R., and Donald B. Rubin. 1983. <span>“The Central Role of the Propensity Score in Observational Studies for Causal Effects.”</span> <em>Biometrika</em> 70 (1): 41–55. <a href="https://doi.org/10.1093/biomet/70.1.41">https://doi.org/10.1093/biomet/70.1.41</a>.
 </div>
-<div id="ref-tchetgenCausalInferencePresence2012" class="csl-entry" role="doc-biblioentry">
+<div id="ref-tchetgenCausalInferencePresence2012" class="csl-entry" role="listitem">
 Tchetgen, Eric J Tchetgen, and Tyler J VanderWeele. 2012. <span>“On Causal Inference in the Presence of Interference.”</span> <em>Statistical Methods in Medical Research</em> 21 (1): 55–75. <a href="https://doi.org/10.1177/0962280210386779">https://doi.org/10.1177/0962280210386779</a>.
 </div>
-<div id="ref-vanderweelePrinciplesConfounderSelection2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vanderweelePrinciplesConfounderSelection2019" class="csl-entry" role="listitem">
 VanderWeele, Tyler J. 2019. <span>“Principles of Confounder Selection.”</span> <em>European Journal of Epidemiology</em> 34 (3): 211–19. <a href="https://doi.org/10.1007/s10654-019-00494-6">https://doi.org/10.1007/s10654-019-00494-6</a>.
 </div>
-<div id="ref-westreichInvitedCommentaryPositivity2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-westreichInvitedCommentaryPositivity2010" class="csl-entry" role="listitem">
 Westreich, Daniel, and Stephen R. Cole. 2010. <span>“Invited Commentary: Positivity in Practice.”</span> <em>American Journal of Epidemiology</em> 171 (6): 674–77. <a href="https://doi.org/10.1093/aje/kwp436">https://doi.org/10.1093/aje/kwp436</a>.
 </div>
 </div>
@@ -520,9 +545,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -587,6 +626,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
